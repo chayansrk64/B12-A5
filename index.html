@@ -10,13 +10,45 @@
     <!-- tailwind cdn -->
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-<button class="btn btn-secondary">Secondary</button>
-<button class="btn btn-accent">Accent</button>
-    
+<body class="max-w-[1920px] mx-auto">
+
+   <header class="shadow-sm">
+        <div class="navbar bg-base-100  max-w-[94%] mx-auto">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-4">
+         <div class="flex justify-center items-center bg-[#ecfff0] rounded-3xl px-3 py-1"><span class="font-bold">100</span> <img  class="ms-2 w-[40px]" src="./assets/heart.png" alt=""> </div>
+        <div class="flex justify-center items-center bg-[#ecfff0] rounded-3xl px-3 py-1"><span class="font-bold">100</span> <img  class="ms-2 w-[40px]" src="./assets/coin.png" alt=""> </div>
+        <div class="flex justify-center items-center bg-[#00A63E] rounded-3xl px-3 py-3 text-white"><span  class="me-2">100</span> Copy </div>
+      </ul>
+    </div>
+    <a class="flex text-xl text-[#00A63E] font-bold"> <img class="w-[60px] h-[60px] me-3" src="./assets/logo.png" alt=""> Emergency <br> Service </a>
+  </div>
+  
+  <div class="navbar-end">
+     <div class="navbar-center hidden lg:flex gap-4">
+        <div class="flex justify-center items-center bg-[#ecfff0] rounded-3xl px-3 py-1"><span class="font-bold">100</span> <img  class="ms-2 w-[40px]" src="./assets/heart.png" alt=""> </div>
+        <div class="flex justify-center items-center bg-[#ecfff0] rounded-3xl px-3 py-1"><span class="font-bold">100</span> <img  class="ms-2 w-[40px]" src="./assets/coin.png" alt=""> </div>
+        <div class="flex justify-center items-center bg-[#00A63E] rounded-3xl px-3 py-3 text-white"><span  class="me-2">100</span> Copy </div>
+
+        
+  </div>
+  </div>
+</div>
+   </header>
+
+   <main>
+
+   </main>
+
+   <footer>
+
+   </footer>
 
 
     <script src="./script.js"></script>
