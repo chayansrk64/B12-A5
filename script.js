@@ -44,7 +44,8 @@ const helplineCards = [
   }
 ];
 
-
+// create an array for the call history
+const callHistory = []
 
 // show card on the ui
 const cardContainer =  document.getElementById('card-container');
@@ -104,17 +105,29 @@ const allCoin = document.querySelectorAll('.coin-btn');
 callBtns.forEach(function(callBtn, index){
     callBtn.addEventListener('click', function(){
 
+        
+        // first coin condition
          let coinNum = parseInt(allCoin[0].innerText)
          if(coinNum < 20){
             alert("You don't have sufficient coin!");
             return;
         }
 
-
+        // show alert
         const card = helplineCards[index];
         alert(`${card.title} and number is ${card.number}`)
 
-       
+        let result = JSON.parse(localStorage.getItem('data')) || [];
+        
+        const callData = {
+            title: card.title,
+            number: card.number
+        }
+        result.push(callData)
+        localStorage.setItem('data', JSON.stringify(result))
+         
+        
+        //decrease coin number
         coinNum -= 20;
         allCoin.forEach(function(coin){
             coin.innerText = coinNum;
@@ -122,6 +135,8 @@ callBtns.forEach(function(callBtn, index){
   
     })
 })
+
+
 
 
 
