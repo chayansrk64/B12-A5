@@ -59,7 +59,7 @@ helplineCards.forEach(function(card){
                         <div>
                             <h2 class="text-2xl font-semibold mt-4">${card.title}</h2>
                             <p class="text-[gray]">Police</p>
-                            <h3 class="text-4xl font-semibold mt-3">999</h3>
+                            <h3 class="text-4xl font-semibold mt-3">${card.number}</h3>
                             <p class="bg-gray-200 text-[gray] p-2 rounded-3xl inline-block mb-4">Police</p>
                         </div>
                         <div class="flex gap-2">
@@ -101,20 +101,35 @@ const allCoin = document.querySelectorAll('.coin-btn');
 
 
 
-for(let callBtn of callBtns){
+callBtns.forEach(function(callBtn, index){
     callBtn.addEventListener('click', function(){
-        helplineCards.forEach(function(card, index){
-            card = helplineCards[index];
-            alert(`${card.title} and ${card.number}`)
-        })
-    })
-}
 
-for(let coin of allCoin){
-    coin = parseInt(coin.innerText);
-    console.log(coin);
+         let coinNum = parseInt(allCoin[0].innerText)
+         if(coinNum < 20){
+            alert("You don't have sufficient coin!");
+            return;
+        }
+
+
+        const card = helplineCards[index];
+        alert(`${card.title} and number is ${card.number}`)
+
+       
+        coinNum -= 20;
+        allCoin.forEach(function(coin){
+            coin.innerText = coinNum;
+        })
+  
+    })
+})
+
+
+
+// for(let coin of allCoin){
+//     coin = parseInt(coin.innerText);
+//     console.log(coin);
     
-}
+// }
 
 // count-decrease
 
