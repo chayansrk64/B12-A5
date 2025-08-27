@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Calls</title>
+    <!-- google font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
+    <!-- font awesome cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- daisy ui -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <!-- tailwind cdn -->
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="max-w-[1920px] mx-auto">
+<body class="max-w-[1920px] mx-auto font-[Inter]">
 
    <header class="shadow-sm">
         <div class="navbar bg-base-100  max-w-[94%] mx-auto">
@@ -42,13 +48,42 @@
 </div>
    </header>
 
-   <main>
-        
+   <main class="bg-[#f5fff6]">
+        <!-- banner -->
         <section class="banner bg-[linear-gradient(90deg,rgba(1,49,35,1),rgba(0,103,71,1)_50%,rgba(1,50,35,1)_100%)] flex justify-center items-center flex-col text-center">
             <img class="w-[100px] mt-6" src="./assets/logo.png" alt="">
             <h1 class="text-2xl lg:text-[40px] text-white font-bold my-4">Emergency Service Directory</h1>
             <p class="text-white lg:text-xl mb-6 ">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
         </section>
+
+        <!-- card section and aside -->
+         <section class=" max-w-[94%] mx-auto">
+            <div class="grid gird-cols-1 lg:grid-cols-12 gap-4">
+                <div class="left border-2 border-red-500 lg:col-span-9  grid grid-cols-3 gap-3 ">
+
+                    <div class="card bg-white p-5 shadow-md">
+                        <div class="flex justify-between items-center">
+                            <img class="w-[60px] bg-sky-200 rounded-2xl p-2" src="./assets/police.png" alt="logo-image">
+                            <span> <i class="fa-regular fa-heart text-3xl cursor-pointer"></i> </span>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-semibold">Police Helpline Number</h2>
+                            <p>Police</p>
+                            <h3 class="text-4xl font-semibold">999</h3>
+                            <p class="bg-gray-200 p-2 rounded-3xl inline-block">Police</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn btn-primary w-1/2">Copy</button>
+                            <button class="btn btn-success w-1/2">Call</button>
+                        </div>
+                    </div>
+
+                </div>
+                <aside class="right border-2 border-green-500 lg:col-span-3 h-[200px]">
+                    aside
+                </aside>
+            </div>
+         </section>
       
    </main>
 
