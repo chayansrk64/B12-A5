@@ -135,6 +135,12 @@ callBtns.forEach(function(callBtn, index){
         allCoin.forEach(function(coin){
             coin.innerText = coinNum;
         })
+
+
+        renderHistoryContainer()
+
+
+
   
     })
 })
@@ -144,22 +150,31 @@ callBtns.forEach(function(callBtn, index){
 // history-container
 
 const historyContainer = document.getElementById('history-container');
-let results = JSON.parse(localStorage.getItem('data'))
-for(let result of results){
-    let div = document.createElement('div');
-    div.innerHTML = `
-       
-            <div class="flex justify-between items-center p-4 bg-[#fafafa] mt-4 rounded-xl">
-                        <div>
-                          <h3 class="text-lg font-semibold">${result.title}</h3>
-                          <p>${result.number}</p>
-                        </div>
-                        <p>${result.time}</p>
-            </div>
-       
+function renderHistoryContainer(){
 
-    `
-    historyContainer.appendChild(div);
+  let results = JSON.parse(localStorage.getItem('data'))
+  historyContainer.innerHTML = "";
+  for(let result of results){
+      let div = document.createElement('div');
+      div.innerHTML = `
+         
+              <div class="flex justify-between items-center p-4 bg-[#fafafa] mt-4 rounded-xl">
+                          <div>
+                            <h3 class="text-lg font-semibold">${result.title}</h3>
+                            <p>${result.number}</p>
+                          </div>
+                          <p>${result.time}</p>
+              </div>
+         
+  
+      `
+      historyContainer.appendChild(div);
+  }
+
+
 }
+
+ renderHistoryContainer()
+
 
 
