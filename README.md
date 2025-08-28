@@ -1,25 +1,13 @@
-# Emergency Numbers
+# Frequently Asked Questions (FAQ)
 
-## Find with your criteria
+### What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
-<!-- paragraph -->
-This is a readme praragraph and its amazing to write.
+* The key differences between `getElementById`, `getElementsByClassName`, and `querySelector/querySelectorAll` 
 
-<!-- key points -->
-* these are the key points-1
-* these are the key points-2
-* these are the key points-3
+* `getElementById()` selects a single element based on it's unique `id` attribute.
 
-<!-- diagram -->
-## Watch the video
-https://www.youtube.com/watch?v=E6NO0rgFub4&ab_channel=LearnFastMakeThings
+* `getElementsByClassName` is used for selecting multiple elements by class name when a live HTMLCollection is desired.
 
-<!-- how to install  -->
-## How to install the Project in your machine and run
-1. npm i
-2. install all other dependencies
-
-1. npm run dev
-
-
+* `querySelector/querySelectorAll` used for more complex selections using __CSS__ selectors, expecially when a static collection (NodeList) is preferred. 
+ `querySelector` for the first match and `querySelectorAll` for all matches.
 
