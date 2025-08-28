@@ -64,7 +64,7 @@ helplineCards.forEach(function(card){
                             <p class="bg-gray-200 text-[gray] p-2 rounded-3xl inline-block mb-4">Police</p>
                         </div>
                         <div class="flex gap-2">
-                            <button class="btn bg-[white] w-1/2"> <i class="fa-regular fa-copy"></i> Copy</button>
+                            <button class="copy-btn btn bg-[white] w-1/2"> <i class="fa-regular fa-copy"></i> Copy</button>
                             <button class="call-btn btn btn-success w-1/2">Call</button>
                         </div>
                     </div>
@@ -99,15 +99,16 @@ for(let heart of allHeart){
 const callBtns = document.querySelectorAll('.call-btn');
 // get the coins 
 const allCoin = document.querySelectorAll('.coin-btn');
-
+ 
 
 
 callBtns.forEach(function(callBtn, index){
     callBtn.addEventListener('click', function(){
 
-        
-        // first coin condition
-         let coinNum = parseInt(allCoin[0].innerText)
+      // first coin condition
+      let coinNum = parseInt(allCoin[0].innerText)
+       
+
          if(coinNum < 20){
             alert("You don't have sufficient coin!");
             return;
@@ -135,6 +136,8 @@ callBtns.forEach(function(callBtn, index){
         allCoin.forEach(function(coin){
             coin.innerText = coinNum;
         })
+
+         
 
 // render after every time clicking
         renderHistoryContainer()
@@ -184,13 +187,52 @@ function renderHistoryContainer(){
 
 
 // clear history container 
-function ClearHistoryContainer(){
+
   document.getElementById('clear-history').addEventListener('click', function(){
      localStorage.removeItem('data')
      historyContainer.innerHTML = "";
 }) 
-}
-ClearHistoryContainer()
+
+
+
+// Copy button functionality =========
+// copy buttons form cards
+const copyButtons = document.querySelectorAll('.copy-btn');
+// copy elements form header
+let copyCountEls = document.querySelectorAll('.copyCountEls');
+
+let copyCounter = 0;
+copyButtons.forEach(function(copyBtn, index){
+    copyBtn.addEventListener('click', function(){
+         alert('Text copied to Clipborad!')
+          copyCounter++;
+      console.log(copyCounter);
+        copyCountEls.forEach(function(copyCount){
+          copyCount.innerText = copyCounter;
+            
+          })
+          
+       
+            //  let copyCountElNumber = parseInt(copyCountEl.innerText)
+         
+         
+    })
+})
+
+
+
+// let count = 0;
+// for(let heart of allHeart){
+//     heart.addEventListener('click', function(){
+//         count++;
+//         navHearts.forEach(function(heart){
+//             heart.innerText = count;
+//         })
+//     })
+// }
+
+
+
 
 
 
