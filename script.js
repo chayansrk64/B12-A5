@@ -60,7 +60,7 @@ helplineCards.forEach(function(card){
                         <div>
                             <h2 class="text-2xl font-semibold mt-4">${card.title}</h2>
                             <p class="text-[gray]">Police</p>
-                            <h3 class="text-4xl font-semibold mt-3">${card.number}</h3>
+                            <h3 class="copy-source text-4xl font-semibold mt-3">${card.number}</h3>
                             <p class="bg-gray-200 text-[gray] p-2 rounded-3xl inline-block mb-4">Police</p>
                         </div>
                         <div class="flex gap-2">
@@ -202,34 +202,34 @@ const copyButtons = document.querySelectorAll('.copy-btn');
 let copyCountEls = document.querySelectorAll('.copyCountEls');
 
 let copyCounter = 0;
-copyButtons.forEach(function(copyBtn, index){
+copyButtons.forEach(function(copyBtn){
     copyBtn.addEventListener('click', function(){
-         alert('Text copied to Clipborad!')
-          copyCounter++;
-      console.log(copyCounter);
+        alert('Text copied to Clipborad!')
+        copyCounter++;
+
+        // get the card
+         const card = this.closest('.card')
+         const sourceText = card.querySelector('.copy-source').innerText;
+        // copy test
+        navigator.clipboard.writeText(sourceText).then(function(){
+            
+        })
+         
+
+        // set the copyCounter to the header
         copyCountEls.forEach(function(copyCount){
           copyCount.innerText = copyCounter;
-            
           })
+
+
+
           
        
-            //  let copyCountElNumber = parseInt(copyCountEl.innerText)
-         
          
     })
 })
 
 
-
-// let count = 0;
-// for(let heart of allHeart){
-//     heart.addEventListener('click', function(){
-//         count++;
-//         navHearts.forEach(function(heart){
-//             heart.innerText = count;
-//         })
-//     })
-// }
 
 
 
