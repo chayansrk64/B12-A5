@@ -136,7 +136,7 @@ callBtns.forEach(function(callBtn, index){
             coin.innerText = coinNum;
         })
 
-
+// render after every time clicking
         renderHistoryContainer()
 
 
@@ -150,10 +150,14 @@ callBtns.forEach(function(callBtn, index){
 // history-container
 
 const historyContainer = document.getElementById('history-container');
+
 function renderHistoryContainer(){
 
-  let results = JSON.parse(localStorage.getItem('data'))
+  //empty container past data
   historyContainer.innerHTML = "";
+
+  let results = JSON.parse(localStorage.getItem('data')) || [];
+  
   for(let result of results){
       let div = document.createElement('div');
       div.innerHTML = `
@@ -174,7 +178,19 @@ function renderHistoryContainer(){
 
 }
 
+// initial render 
  renderHistoryContainer()
+
+
+
+// clear history container 
+function ClearHistoryContainer(){
+  document.getElementById('clear-history').addEventListener('click', function(){
+     localStorage.removeItem('data')
+     historyContainer.innerHTML = "";
+}) 
+}
+ClearHistoryContainer()
 
 
 
