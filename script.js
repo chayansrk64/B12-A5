@@ -8,7 +8,7 @@ const helplineCards = [
     tag: "Police"
   },
   {
-    logo: "./assets/fire.png",
+    logo: "./assets/fire-service.png",
     title: "Fire Service Helpline",
     category: "Fire Service",
     number: "995",
@@ -22,25 +22,46 @@ const helplineCards = [
     tag: "Ambulance"
   },
   {
-    logo: "./assets/women.png",
+    logo: "./assets/police.png",
     title: "Women Helpline",
     category: "Social Service",
     number: "121",
     tag: "Women"
   },
   {
-    logo: "./assets/child.png",
+    logo: "./assets/Bangladesh-Railway.png",
     title: "Child Helpline",
     category: "Social Welfare",
     number: "1098",
     tag: "Child"
   },
   {
-    logo: "./assets/cyber.png",
+    logo: "./assets/police.png",
     title: "Cyber Crime Helpline",
     category: "Cyber Security",
     number: "106",
     tag: "Cyber"
+  },
+    {
+    logo: "./assets/ambulance.png",
+    title: "Mental Health Support",
+    category: "Health",
+    number: "1800",
+    tag: "Mental Health"
+  },
+  {
+    logo: "./assets/emergency.png",
+    title: "Disaster Management Helpline",
+    category: "Emergency",
+    number: "108",
+    tag: "Disaster"
+  },
+  {
+    logo: "./assets/police.png",
+    title: "Senior Citizens Helpline",
+    category: "Social Welfare",
+    number: "145  ",
+    tag: "Senior"
   }
 ];
 
@@ -54,14 +75,14 @@ helplineCards.forEach(function(card){
     div.innerHTML = `
     <div class="card bg-white p-8 shadow-md h-[360px]">
                         <div class="flex justify-between items-center">
-                            <img class="w-[60px] bg-sky-200 rounded-2xl p-2" src="./assets/police.png" alt="logo-image">
+                            <img class="w-[60px] bg-sky-200 rounded-2xl p-2" src="${card.logo}" alt="logo-image">
                             <span id="heart1"> <i class="card-heart fa-regular fa-heart text-3xl cursor-pointer"></i> </span>
                         </div>
                         <div>
                             <h2 class="text-2xl font-semibold mt-4">${card.title}</h2>
-                            <p class="text-[gray]">Police</p>
+                            <p class="text-[gray]">${card.category}</p>
                             <h3 class="copy-source text-4xl font-semibold mt-3">${card.number}</h3>
-                            <p class="bg-gray-200 text-[gray] p-2 rounded-3xl inline-block mb-4">Police</p>
+                            <p class="bg-gray-200 text-[gray] p-2 rounded-3xl inline-block mb-4">${card.tag}</p>
                         </div>
                         <div class="flex gap-2">
                             <button class="copy-btn btn bg-[white] w-1/2"> <i class="fa-regular fa-copy"></i> Copy</button>
@@ -225,7 +246,7 @@ let copyCountEls = document.querySelectorAll('.copyCountEls');
 let copyCounter = 0;
 copyButtons.forEach(function(copyBtn){
     copyBtn.addEventListener('click', function(){
-        alert('Text copied to Clipborad!')
+        alert('Text copied to Clipboard!')
         copyCounter++;
 
         // get the card
