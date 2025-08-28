@@ -120,13 +120,34 @@ callBtns.forEach(function(callBtn, index){
 
         let result = JSON.parse(localStorage.getItem('data')) || [];
 
-        let currentTime = new Date().toLocaleTimeString();
+        // let currentTime = new Date().toLocaleTimeString();
+
+        // format date and time
+        function formatDateTime(date){
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+            let ampm = hours >= 12 ? "PM" : "AM"
+
+
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+           return `${hours}:${minutes}:${seconds} ${ampm}`;
+
+        }
+
+        let now = new Date();
+        let currentTime = formatDateTime(now);
 
         const callData = {
             title: card.title,
             number: card.number,
             time: currentTime
         }
+        
         result.push(callData)
         localStorage.setItem('data', JSON.stringify(result))
          
